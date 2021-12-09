@@ -6,7 +6,8 @@ namespace BattleShipGame
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Screen screen = new Screen();
+            screen.GenerateGameboard();
         }
     }
 }
