@@ -35,5 +35,11 @@ namespace BattleShipGame
                 Console.WriteLine("\n");
             }
         }
+
+        public void UpdateGameBoard(int updateX, int updateY, string updateIcon)
+        {
+            gameBoard[updateX, updateY] = updateIcon;
+            GenerateGameboard();
+        }
     }
 }
