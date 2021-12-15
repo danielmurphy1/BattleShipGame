@@ -15,19 +15,21 @@ namespace BattleShipGame
 
             while(!isBattleShipSunk)
             {
-                Console.Write("Enter guess for X (horizontal) coordinate (column) 1-10: ");
-                if (int.TryParse(Console.ReadLine(), out int xCoordValue))
+                player.FireShot();
+                if (player.IsShotValid(screen.gameBoard))
                 {
-                    player.xChoice = xCoordValue;
+                    Console.Clear();
+                    screen.UpdateGameBoard(player.yChoice, player.xChoice, " X ");
+                    Console.WriteLine($"Your last guess was {player.xChoice}, {10 - player.yChoice}");
                 }
+                else
+                {
+                    Console.Clear();
+                    screen.GenerateGameboard();
+                    Console.WriteLine($"Your last guess was {player.xChoice}, {10 - player.yChoice}");
 
-                Console.Write("Enter guess for Y (vertical) coordinate (row) 1-10: ");
-                if (int.TryParse(Console.ReadLine(), out int yCoordValue))
-                {
-                    player.yChoice = 10 - yCoordValue;
+                    Console.WriteLine("That was not a valid choice. Please only select numbers 1-10.");
                 }
-                Console.WriteLine($"Your guess was {player.xChoice}, {10 - player.yChoice}");
-                screen.UpdateGameBoard(player.yChoice, player.xChoice, " X");
             }
 
         }

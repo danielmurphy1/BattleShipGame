@@ -29,7 +29,7 @@ namespace BattleShipGame
             for (int i = 0; i < gameBoard.GetLength(0); i++)
             {
                 for (int j = 0; j < gameBoard.GetLength(1); j++)
-                {
+                {   
                     Console.Write(gameBoard[i, j] + " \t");
                 }
 
@@ -37,7 +37,7 @@ namespace BattleShipGame
             }
         }
 
-        public void UpdateGameBoard(int updateX, int updateY, string updateIcon)
+        public void UpdateGameBoard(int updateX, int updateY, string updateIcon = "■")
         {
             gameBoard[updateX, updateY] = updateIcon;
             GenerateGameboard();
