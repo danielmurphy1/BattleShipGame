@@ -84,8 +84,8 @@ namespace BattleShipGame
 
         public string? DetermineShipDirection()
         {
-            //int shipDirectionRandom = random.Next(2);
-            int shipDirectionRandom = 1;
+            int shipDirectionRandom = random.Next(2);
+            //int shipDirectionRandom = 1;
 
             switch (shipDirectionRandom)
             {
@@ -95,6 +95,20 @@ namespace BattleShipGame
                     return "Vertical";
             }
             return null;
+        }
+
+        public bool IsShipHit(int xChoice, int yChoice)
+        {
+            return (xChoice == shipFirstPosition[0] ||
+                    xChoice == shipSecondPosition[0] ||
+                    xChoice == shipThirdPosition[0] ||
+                    xChoice == shipFourthPosition[0] ||
+                    xChoice == shipFifthPosition[0]) &&
+                    (yChoice == shipFirstPosition[1] ||
+                    yChoice == shipSecondPosition[1] ||
+                    yChoice == shipThirdPosition[1] ||
+                    yChoice == shipFourthPosition[1] ||
+                    yChoice == shipFifthPosition[1]);
         }
     }
 }
