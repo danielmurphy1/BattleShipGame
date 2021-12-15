@@ -8,21 +8,21 @@ namespace BattleShipGame
 {
     internal class Player
     {
-        public int xChoice;
-        public int yChoice;
+        public int xCoordValue;
+        public int yCoordValue;
 
         public void FireShot()
         {
             Console.Write("Enter guess for X (horizontal) coordinate (column) 1-10: ");
-            if (int.TryParse(Console.ReadLine(), out int xCoordValue))
+            if (int.TryParse(Console.ReadLine(), out int xChoice))
             {
-               xChoice = xCoordValue;
+               xCoordValue = xChoice;
             }
 
             Console.Write("Enter guess for Y (vertical) coordinate (row) 1-10: ");
-            if (int.TryParse(Console.ReadLine(), out int yCoordValue))
+            if (int.TryParse(Console.ReadLine(), out int yChoice))
             {
-               yChoice = 10 - yCoordValue;
+               yCoordValue = 10 - yChoice;
             }
             //Console.WriteLine($"Your guess was {xChoice}, {10 - yChoice}");
             //screen.UpdateGameBoard(player.yChoice, player.xChoice, " X");
@@ -30,7 +30,7 @@ namespace BattleShipGame
 
         public bool IsShotValid(string[,] gameBoard)
         {
-            return xChoice >= 1 && xChoice <= 10 && yChoice >= 0 && yChoice <= 9 && gameBoard[yChoice, xChoice] == " ■ ";
+            return xCoordValue >= 1 && xCoordValue <= 10 && yCoordValue >= 0 && yCoordValue <= 9 && gameBoard[yCoordValue, xCoordValue] == " ■ ";
         }
        
     }

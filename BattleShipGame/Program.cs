@@ -21,20 +21,20 @@ namespace BattleShipGame
                 if (player.IsShotValid(screen.gameBoard))
                 {
                     //Console.Clear();
-                    screen.UpdateGameBoard(player.yChoice, player.xChoice, " X ");
+                    screen.UpdateGameBoard(player.yCoordValue, player.xCoordValue, " X ");
                     //10-player.yChoice is used because the grid for the game is labled in 
                     //inverse order of the 2D array indices
-                    if (ship.IsShipHit(player.xChoice, 10 - player.yChoice))
+                    if (ship.IsShipHit(player.xCoordValue, 10 - player.yCoordValue))
                     {
                         Console.WriteLine("Hit");
                     }
-                    Console.WriteLine($"Your last guess was {player.xChoice}, {10 - player.yChoice}");
+                    Console.WriteLine($"Your last guess was {player.xCoordValue}, {10 - player.yCoordValue}");
                 }
                 else
                 {
                     Console.Clear();
                     screen.GenerateGameboard();
-                    Console.WriteLine($"Your last guess was {player.xChoice}, {10 - player.yChoice}");
+                    Console.WriteLine($"Your last guess was {player.xCoordValue}, {10 - player.yCoordValue}");
 
                     Console.WriteLine("That was not a valid choice. Please only select numbers 1-10.");
                 }
