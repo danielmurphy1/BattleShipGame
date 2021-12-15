@@ -9,9 +9,11 @@ namespace BattleShipGame
             Screen screen = new Screen();
             screen.GenerateGameboard();
             Player player = new Player();
+            Ship ship = new Ship();
 
             bool isBattleShipSunk = false;
 
+            ship.RandomShipPlacement();
 
             while(!isBattleShipSunk)
             {
