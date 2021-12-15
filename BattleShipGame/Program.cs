@@ -11,22 +11,30 @@ namespace BattleShipGame
             Player player = new Player();
             Ship ship = new Ship();
 
-            bool isBattleShipSunk = false;
+            //bool isBattleShipSunk = false;
 
             ship.RandomShipPlacement();
 
-            while(!isBattleShipSunk)
+            while(!ship.isBattleShipSunk)
             {
+
+                screen.ShowShipAndPlayerStatus(player.shots, ship.battleShipLives);
                 player.FireShot();
                 if (player.IsShotValid(screen.gameBoard))
                 {
-                    //Console.Clear();
-                    screen.UpdateGameBoard(player.yCoordValue, player.xCoordValue, " X ");
                     //10-player.yChoice is used because the grid for the game is labled in 
                     //inverse order of the 2D array indices
                     if (ship.IsShipHit(player.xCoordValue, 10 - player.yCoordValue))
                     {
+                        Console.Clear();
+                        ship.BattleShipHit();
+                        screen.UpdateGameBoard(player.yCoordValue, player.xCoordValue, " X ");
                         Console.WriteLine("Hit");
+                    } else
+                    {
+                        Console.Clear();
+                        screen.UpdateGameBoard(player.yCoordValue, player.xCoordValue, " O ");
+                        Console.WriteLine("Miss");
                     }
                     Console.WriteLine($"Your last guess was {player.xCoordValue}, {10 - player.yCoordValue}");
                 }
@@ -38,7 +46,21 @@ namespace BattleShipGame
 
                     Console.WriteLine("That was not a valid choice. Please only select numbers 1-10.");
                 }
+
+                if (ship.battleShipLives == 0)
+                {
+                    //add a game winning message with color
+                    ship.ToggleIsBattleShipSunk();
+                }
+
+                if (player.shots == 0)
+                {
+                    //add game losing message with color
+                    ship.ToggleIsBattleShipSunk();
+                }
             }
+            //add play again message/functionality
+            
 
         }
     }

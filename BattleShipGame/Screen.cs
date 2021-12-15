@@ -42,5 +42,10 @@ namespace BattleShipGame
             gameBoard[updateX, updateY] = updateIcon;
             GenerateGameboard();
         }
+
+        public void ShowShipAndPlayerStatus(int shots, int battleShipLives)
+        {
+            Console.WriteLine($"\nPlayer Shots Remaining: {shots}. \n\nBattleShip Lives Remaining: {battleShipLives}.");
+        }
     }
 }

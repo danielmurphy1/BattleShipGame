@@ -13,6 +13,8 @@ namespace BattleShipGame
         int[] shipThirdPosition = new int[2];
         int[] shipFourthPosition = new int[2];
         int[] shipFifthPosition = new int[2];
+        public int battleShipLives = 5;
+        public bool isBattleShipSunk = false;
 
         Random random = new Random();
 
@@ -109,6 +111,16 @@ namespace BattleShipGame
                     yChoice == shipThirdPosition[1] ||
                     yChoice == shipFourthPosition[1] ||
                     yChoice == shipFifthPosition[1]);
+        }
+
+        public void BattleShipHit()
+        {
+            battleShipLives--;
+        }
+
+        public bool ToggleIsBattleShipSunk()
+        {
+            return isBattleShipSunk = !isBattleShipSunk;
         }
     }
 }
