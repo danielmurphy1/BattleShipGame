@@ -48,10 +48,6 @@ namespace BattleShipGame
                     shipFifthPosition[0] = shipFirstPosition[0] + 4;
                     shipFifthPosition[1] = shipFirstPosition[1];
                 }
-                //Console.WriteLine($"shipSecondPosition: {shipSecondPosition[0]}, {shipSecondPosition[1]}");
-                //Console.WriteLine($"shipThirdPosition: {shipThirdPosition[0]}, {shipThirdPosition[1]}");
-                //Console.WriteLine($"shipFourthPosition: {shipFourthPosition[0]}, {shipFourthPosition[1]}");
-                //Console.WriteLine($"shipFifthPosition: {shipFifthPosition[0]}, {shipFifthPosition[1]}");
 
             } else
             {
@@ -77,17 +73,12 @@ namespace BattleShipGame
                     shipFifthPosition[0] = shipFirstPosition[0];
                     shipFifthPosition[1] = shipFirstPosition[1] + 4;
                 }
-                //Console.WriteLine($"shipSecondPosition: {shipSecondPosition[0]}, {shipSecondPosition[1]}");
-                //Console.WriteLine($"shipThirdPosition: {shipThirdPosition[0]}, {shipThirdPosition[1]}");
-                //Console.WriteLine($"shipFourthPosition: {shipFourthPosition[0]}, {shipFourthPosition[1]}");
-                //Console.WriteLine($"shipFifthPosition: {shipFifthPosition[0]}, {shipFifthPosition[1]}");
             }
         }
 
         public string? DetermineShipDirection()
         {
             int shipDirectionRandom = random.Next(2);
-            //int shipDirectionRandom = 1;
 
             switch (shipDirectionRandom)
             {

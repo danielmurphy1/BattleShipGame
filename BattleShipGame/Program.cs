@@ -10,7 +10,6 @@ namespace BattleShipGame
             Player player = new Player();
             Ship ship = new Ship();
 
-            //bool isBattleShipSunk = false;
             screen.WelcomeMessage();
 
             if (Console.ReadKey(true).KeyChar == ' ')
@@ -31,6 +30,7 @@ namespace BattleShipGame
 
                 screen.ShowShipAndPlayerStatus(player.shots, ship.battleShipLives);
                 player.FireShot();
+
                 if (player.IsShotValid(screen.gameBoard))
                 {
                     player.SubtractShot();
