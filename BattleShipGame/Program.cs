@@ -28,6 +28,7 @@ namespace BattleShipGame
                     {
                         Console.Clear();
                         ship.BattleShipHit();
+                        player.SubtractShot();
                         screen.UpdateGameBoard(player.yCoordValue, player.xCoordValue, " X ");
                         Console.WriteLine("Hit");
                     } else

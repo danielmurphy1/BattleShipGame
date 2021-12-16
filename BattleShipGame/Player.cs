@@ -26,9 +26,13 @@ namespace BattleShipGame
                yCoordValue = 10 - yChoice;
             }
 
-            shots--;
             //Console.WriteLine($"Your guess was {xChoice}, {10 - yChoice}");
             //screen.UpdateGameBoard(player.yChoice, player.xChoice, " X");
+        }
+
+        public void SubtractShot()
+        {
+            shots--;
         }
 
         public bool IsShotValid(string[,] gameBoard)
