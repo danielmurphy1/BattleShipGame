@@ -22,7 +22,9 @@ namespace BattleShipGame
         {
             shipFirstPosition[0] = random.Next(1, 11);
             shipFirstPosition[1] = random.Next(1, 11);
-            Console.WriteLine($"shipFirstPosition: {shipFirstPosition[0]}, {shipFirstPosition[1]}");
+
+            //uncomment the below line to see first position for testing/debugging
+            //Console.WriteLine($"shipFirstPosition: {shipFirstPosition[0]}, {shipFirstPosition[1]}");
 
             if (DetermineShipDirection() == "Horizontal")
             {
