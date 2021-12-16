@@ -11,6 +11,7 @@ To Download and Run Locally
 1. Clone code locally from GitHub
 2. Open in Visual Studio and Run -OR-
 3. Run From Command Line
+4. (optional) To print the location of the first "piece" of the ship to the console, uncomment line 27 on Ship.cs
 
 ###### Fresh Game ScreenShot
 ![Fresh Game ScreenShot](https://github.com/danielmurphy1/BattleShipGame/blob/master/ScreenShots/battleship1.JPG)
