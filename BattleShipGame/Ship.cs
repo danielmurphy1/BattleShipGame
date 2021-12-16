@@ -22,7 +22,7 @@ namespace BattleShipGame
         {
             shipFirstPosition[0] = random.Next(1, 11);
             shipFirstPosition[1] = random.Next(1, 11);
-            Console.WriteLine($"shipFirstPosition: {shipFirstPosition[0]}, {shipFirstPosition[1]}");
+            //Console.WriteLine($"shipFirstPosition: {shipFirstPosition[0]}, {shipFirstPosition[1]}");
 
             if (DetermineShipDirection() == "Horizontal")
             {
@@ -48,10 +48,10 @@ namespace BattleShipGame
                     shipFifthPosition[0] = shipFirstPosition[0] + 4;
                     shipFifthPosition[1] = shipFirstPosition[1];
                 }
-                Console.WriteLine($"shipSecondPosition: {shipSecondPosition[0]}, {shipSecondPosition[1]}");
-                Console.WriteLine($"shipThirdPosition: {shipThirdPosition[0]}, {shipThirdPosition[1]}");
-                Console.WriteLine($"shipFourthPosition: {shipFourthPosition[0]}, {shipFourthPosition[1]}");
-                Console.WriteLine($"shipFifthPosition: {shipFifthPosition[0]}, {shipFifthPosition[1]}");
+                //Console.WriteLine($"shipSecondPosition: {shipSecondPosition[0]}, {shipSecondPosition[1]}");
+                //Console.WriteLine($"shipThirdPosition: {shipThirdPosition[0]}, {shipThirdPosition[1]}");
+                //Console.WriteLine($"shipFourthPosition: {shipFourthPosition[0]}, {shipFourthPosition[1]}");
+                //Console.WriteLine($"shipFifthPosition: {shipFifthPosition[0]}, {shipFifthPosition[1]}");
 
             } else
             {
@@ -77,10 +77,10 @@ namespace BattleShipGame
                     shipFifthPosition[0] = shipFirstPosition[0];
                     shipFifthPosition[1] = shipFirstPosition[1] + 4;
                 }
-                Console.WriteLine($"shipSecondPosition: {shipSecondPosition[0]}, {shipSecondPosition[1]}");
-                Console.WriteLine($"shipThirdPosition: {shipThirdPosition[0]}, {shipThirdPosition[1]}");
-                Console.WriteLine($"shipFourthPosition: {shipFourthPosition[0]}, {shipFourthPosition[1]}");
-                Console.WriteLine($"shipFifthPosition: {shipFifthPosition[0]}, {shipFifthPosition[1]}");
+                //Console.WriteLine($"shipSecondPosition: {shipSecondPosition[0]}, {shipSecondPosition[1]}");
+                //Console.WriteLine($"shipThirdPosition: {shipThirdPosition[0]}, {shipThirdPosition[1]}");
+                //Console.WriteLine($"shipFourthPosition: {shipFourthPosition[0]}, {shipFourthPosition[1]}");
+                //Console.WriteLine($"shipFifthPosition: {shipFifthPosition[0]}, {shipFifthPosition[1]}");
             }
         }
 

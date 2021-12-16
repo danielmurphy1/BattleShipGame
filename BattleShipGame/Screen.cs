@@ -29,8 +29,34 @@ namespace BattleShipGame
             for (int i = 0; i < gameBoard.GetLength(0); i++)
             {
                 for (int j = 0; j < gameBoard.GetLength(1); j++)
-                {   
-                    Console.Write(gameBoard[i, j] + " \t");
+                {
+                    if (gameBoard[i, j] == " O ")
+                    {
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.Write(gameBoard[i, j] + " \t");
+                        Console.ResetColor();
+                    }
+                    else if (gameBoard[i, j] == " X ")
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.Write(gameBoard[i, j] + " \t");
+                        Console.ResetColor();
+
+                    }
+                    else if (gameBoard[i, j] == " ■ ")
+                    {
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.Write(gameBoard[i, j] + " \t");
+                        Console.ResetColor();
+
+
+                    }
+                    else
+                    {
+                        Console.Write(gameBoard[i, j] + " \t");
+
+                    }
+
                 }
 
                 Console.WriteLine("\n");

@@ -33,20 +33,25 @@ namespace BattleShipGame
                 player.FireShot();
                 if (player.IsShotValid(screen.gameBoard))
                 {
+                    player.SubtractShot();
+
                     //10-player.yChoice is used because the grid for the game is labled in 
                     //inverse order of the 2D array indices
                     if (ship.IsShipHit(player.xCoordValue, 10 - player.yCoordValue))
                     {
                         Console.Clear();
                         ship.BattleShipHit();
-                        player.SubtractShot();
                         screen.UpdateGameBoard(player.yCoordValue, player.xCoordValue, " X ");
-                        Console.WriteLine("Hit");
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("\t\t\t\t\t\tHit");
+                        Console.ResetColor();
                     } else
                     {
                         Console.Clear();
                         screen.UpdateGameBoard(player.yCoordValue, player.xCoordValue, " O ");
-                        Console.WriteLine("Miss");
+                        Console.ForegroundColor= ConsoleColor.Yellow;
+                        Console.WriteLine("\t\t\t\t\t\tMiss");
+                        Console.ResetColor();
                     }
                     Console.WriteLine($"Your last guess was {player.xCoordValue}, {10 - player.yCoordValue}");
                 }
