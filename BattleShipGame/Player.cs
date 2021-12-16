@@ -39,6 +39,11 @@ namespace BattleShipGame
         {
             return xCoordValue >= 1 && xCoordValue <= 10 && yCoordValue >= 0 && yCoordValue <= 9 && gameBoard[yCoordValue, xCoordValue] == " ■ ";
         }
+
+        public void ResetShots()
+        {
+            shots = 10;
+        }
        
     }
 }

@@ -47,5 +47,26 @@ namespace BattleShipGame
         {
             Console.WriteLine($"\nPlayer Shots Remaining: {shots}. \n\nBattleShip Lives Remaining: {battleShipLives}.");
         }
+
+        public void PlayAgainMessage()
+        {
+            Console.WriteLine("\n\nWould you like to play again? \nPress Y to play again or any other key to exit");
+        }
+
+        public void ResetGameBoard()
+        {
+            for (int i = 0; i < gameBoard.GetLength(0); i++)
+            {
+                for (int j = 0; j < gameBoard.GetLength(1); j++)
+                {
+                    if (gameBoard[i, j] == " X " || gameBoard[i, j] == " O ")
+                    {
+                        gameBoard[i, j] = " ■ ";
+                    }
+
+                }
+            }
+            GenerateGameboard();
+        }
     }
 }

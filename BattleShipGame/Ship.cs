@@ -122,5 +122,10 @@ namespace BattleShipGame
         {
             return isBattleShipSunk = !isBattleShipSunk;
         }
+
+        public void ResetBattleShipLives()
+        {
+            battleShipLives = 5;
+        }
     }
 }
