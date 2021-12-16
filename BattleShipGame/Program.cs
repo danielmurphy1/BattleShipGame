@@ -50,18 +50,21 @@ namespace BattleShipGame
                 if (ship.battleShipLives == 0)
                 {
                     //add a game winning message with color
+                    Console.WriteLine("Congratulations - You Win! You have sunk the BattleShip!");
                     ship.ToggleIsBattleShipSunk();
                 }
 
                 if (player.shots == 0)
                 {
                     //add game losing message with color
+                    Console.WriteLine("You have 0 shots remaining - You Lose. You have failed to sink the BattleShip.");
                     ship.ToggleIsBattleShipSunk();
                 }
             }
             //add play again message/functionality
+                //if play again reset all 
+                //if not clear console and display ending message
             
-
         }
     }
 }
