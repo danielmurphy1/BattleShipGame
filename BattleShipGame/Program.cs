@@ -64,13 +64,13 @@ namespace BattleShipGame
                     Console.WriteLine("That was not a valid choice. Please only select numbers 1-10.");
                 }
 
-                if (ship.battleShipLives == 0)
+                if (ship.battleShipLives == 0 || (ship.battleShipLives == 0 && player.shots == 0))
                 {
                     Console.WriteLine("Congratulations - You Win! You have sunk the BattleShip!");
                     ship.ToggleIsBattleShipSunk();
                 }
 
-                if (player.shots == 0)
+                if (player.shots == 0 && ship.battleShipLives > 0)
                 {
                     Console.WriteLine("You have 0 shots remaining - You Lose. You have failed to sink the BattleShip.");
                     ship.ToggleIsBattleShipSunk();
