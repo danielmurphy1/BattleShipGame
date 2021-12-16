@@ -7,15 +7,26 @@ namespace BattleShipGame
         static void Main(string[] args)
         {
             Screen screen = new Screen();
-            screen.GenerateGameboard();
             Player player = new Player();
             Ship ship = new Ship();
 
             //bool isBattleShipSunk = false;
+            screen.WelcomeMessage();
 
-            ship.RandomShipPlacement();
+            if (Console.ReadKey(true).KeyChar == ' ')
+            {
+                Console.Clear();
+                screen.GenerateGameboard();
+                ship.RandomShipPlacement();
 
-            while(!ship.isBattleShipSunk)
+            }
+            else
+            {
+                return;
+            }
+
+
+            while (!ship.isBattleShipSunk)
             {
 
                 screen.ShowShipAndPlayerStatus(player.shots, ship.battleShipLives);
@@ -81,8 +92,7 @@ namespace BattleShipGame
                 
             }
             Console.Clear();
-            //thanks for playing message
-            Console.WriteLine("Thanks for playing");
+            screen.GoodbyeMessage();
             
         }
     }
